@@ -1,10 +1,11 @@
 @file:OptIn(ExperimentalKotlinGradlePluginApi::class)
 
-import org.jetbrains.kotlin.gradle.*
-import org.jetbrains.kotlin.gradle.dsl.*
-import org.jetbrains.kotlin.gradle.plugin.*
-import org.jetbrains.kotlin.gradle.plugin.mpp.*
-import org.jetbrains.kotlin.konan.target.*
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
+import org.jetbrains.kotlin.gradle.plugin.KotlinTarget
+import org.jetbrains.kotlin.gradle.plugin.KotlinTargetHierarchyBuilder
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.konan.target.KonanTarget
 
 plugins {
     kotlin("multiplatform")
@@ -12,7 +13,7 @@ plugins {
 
 kotlin {
     //TODO: setup 20 toolchain only for FFM compilation - is it possible?
-    jvmToolchain(20) //for FFM
+//    jvmToolchain(20) //for FFM
 
     fun KotlinTargetHierarchyBuilder.withPlatform(
         platformType: KotlinPlatformType,
